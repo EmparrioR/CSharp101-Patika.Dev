@@ -39,3 +39,53 @@ foreach ( var item in numbers){
 }
 
 Console.WriteLine("Ortalama: " + toplam/diziUzunlugu);
+
+// Array Metodları Örnekleri
+
+int[] sayiDizisi = {23,12,4,86,72,3,11,17};
+
+// Sırasız Dizi
+foreach (var item in sayiDizisi)
+{
+    Console.WriteLine(item);
+}
+
+// Sıralı Dizi
+
+Array.Sort(sayiDizisi);
+foreach (var item in sayiDizisi){
+    Console.WriteLine(item);
+}
+
+// Array Clear 
+
+// Açıklama: Sayi dizisi elemanlarını kullanarak 2 tane elemanı '0' a çevir
+Array.Clear(sayiDizisi,2,3);
+foreach (var item in sayiDizisi)
+{
+    Console.WriteLine(item);
+}
+
+// Reverse
+
+Array.Reverse(sayiDizisi);
+foreach (var item in sayiDizisi)
+{
+    Console.WriteLine(item);
+}
+
+// Indexof = elemanın ismini verip kaçıncı indekste olduğunu sorgulama
+
+Console.WriteLine(Array.IndexOf(sayiDizisi,72));
+
+// Resize = Dizinin boyutunu değiştirebilme
+
+// Boyutu 9'a çıkarır.
+Array.Resize<int>(ref sayiDizisi,9);
+sayiDizisi[8] = 45;
+
+foreach (var item in sayiDizisi)
+{
+    Console.WriteLine(item);
+}
+
