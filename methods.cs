@@ -31,7 +31,33 @@ int sonuc_2 = methods.ArttirVeTopla(ref a, ref b);
 methods.EkranaYazdir(Convert.ToString(sonuc_2));
 methods.EkranaYazdir((a+b).ToString());
 
+// *********************************************************************
 
+// Out ve tryParse Kullanımı
+
+Console.Write("Bir sayı giriniz: ");
+string sayi = Console.ReadLine();
+
+// string ifadenin int ifadeye dönüşüp dönüşemeyeceğini sorgular
+bool sonuc_a = int.TryParse(sayi, out int outSayi);
+
+// eğer dönüşür ve sonuç '1' ise
+if(sonuc_a){
+    Console.WriteLine("Başarılı");
+    Console.WriteLine(outSayi);
+} else {
+    Console.WriteLine("Başarısız");
+}
+
+// *********************************************************************
+
+
+methods.Toplam(3,5,out int ToplamSonucu);
+Console.WriteLine(ToplamSonucu);
+
+// Metod overloading çıktısı
+methods.EkranaYazdir("Alperen");
+methods.EkranaYazdir(32);
 
 
 // class içindeki değişken,fonk. vs. erişim belirteci vermezsek, default olarak "private" belirler
@@ -40,8 +66,24 @@ class Metotlar{
         Console.WriteLine(veri);
     }
 
+    // Metot Overloading
+
+    public void EkranaYazdir(int veri){
+        Console.WriteLine(veri);
+    }
+
     public int ArttirVeTopla(ref int d1, ref int d2){
         d1++; d2++;
         return d1+d2;
     }
+
+    public void Toplam(int a,int b, out int ToplamSonucu){
+        ToplamSonucu= a + b;
+    }
+
+    
 }
+
+
+
+
